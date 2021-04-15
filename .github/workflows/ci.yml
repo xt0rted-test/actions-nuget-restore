@@ -26,5 +26,9 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: NuGet config contents
+        run: Get-Content '../nuget.config'
+        shell: pwsh
+
       - name: .NET build
         run: dotnet build --configuration Release
